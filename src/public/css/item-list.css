@@ -1,0 +1,213 @@
+/* =========================
+   item-list.css
+========================= */
+
+.item-list__header {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 36px 32px 72px;
+    background-color: #fff;
+}
+
+/* 成功メッセージ */
+.alert-success {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 24px;
+    padding: 12px 16px;
+    border: 1px solid #b7ebc6;
+    border-radius: 6px;
+    background-color: #f6ffed;
+    color: #237804;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* =========================
+   タブ
+========================= */
+.item-list__tabs {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px 16px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #5f5f5f;
+}
+
+.item-list__tab {
+    position: relative;
+    color: #666;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.item-list__tab:hover {
+    color: #000;
+}
+
+.item-list__tab.is-active {
+    color: #ff0000;
+}
+
+/* =========================
+   一覧
+========================= */
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px 30px;
+    padding: 0 8px;
+}
+
+/* aタグ全体をカード化 */
+.item-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================
+   カード
+========================= */
+.item-card {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    opacity: 0.95;
+}
+
+.item-card__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #d9d9d9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.item-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 画像がない時 */
+.item-card__noimage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Sold バッジ */
+.item-card__sold-badge {
+    position: absolute;
+    top: 14px;
+    left: -32px;
+    width: 120px;
+    padding: 6px 0;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 商品名 */
+.item-card__body {
+    padding-top: 12px;
+}
+
+.item-card__name {
+    margin: 0;
+    color: #222;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* 空表示 */
+.item-list > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin: 60px 0;
+}
+
+/* =========================
+   ページネーション
+========================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.pagination nav {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Laravelデフォルトページネーション対策 */
+.pagination .hidden {
+    display: block !important;
+}
+
+.pagination .flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination span,
+.pagination a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination span[aria-current="page"] span,
+.pagination .bg-blue-50,
+.pagination .text-blue-600 {
+    background-color: #000;
+    color: #fff !important;
+    border-color: #000;
+}
+

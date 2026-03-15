@@ -23,6 +23,16 @@ class UserFactory extends Factory
         ];
     }
 
+    // ユーザー作成後にプロフィールも同時に作成
+    public function configure()
+    {
+        return $this->afterCreating(function ($user) {
+            $user->profile()->create(
+                \App\Models\Profile::factory()->make()->toArray()
+            );
+        });
+    }
+
     /**
      * Indicate that the model's email address should be unverified.
      *

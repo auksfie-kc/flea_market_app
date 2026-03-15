@@ -1,0 +1,90 @@
+/* =========================
+   全体レイアウト
+========================= */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 88px auto 0;
+    padding: 0 24px;
+    text-align: center;
+}
+
+/* =========================
+   メッセージ部分
+========================= */
+.verify-email__content {
+    margin-top: 40px;
+}
+
+.form-verify-body p {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.8;
+    color: #111;
+}
+
+
+
+
+/* =========================
+   認証ボタン
+========================= */
+.form__verify {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.form__verify-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    height: 54px;
+    padding: 0 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    background: #d9d9d9;
+    border: 1px solid #666;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.form__verify-button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   再送リンク
+========================= */
+.form-resent-button {
+    margin-top: 20px;
+}
+
+.resent-button {
+    background: none;
+    border: none;
+    color: #0073cc;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.resent-button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   成功メッセージ
+========================= */
+.alert-success {
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    background: #eaf9ea;
+    border: 1px solid #9ed69e;
+    border-radius: 4px;
+    color: #2e7d32;
+    line-height: 1.6;
+}

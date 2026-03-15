@@ -1,0 +1,194 @@
+/* =========================
+   共通設定
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #222;
+    background: #fff;
+    min-width: 1400px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================
+   ヘッダー
+========================= */
+.header {
+    width: 100%;
+    background: #000;
+    padding: 12px 32px;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    display: block;
+    height: 35px;
+    width: auto;
+}
+
+
+/* =========================
+   検索フォーム
+========================= */
+.header__search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 600px;
+    min-width: 320px;
+}
+
+.header__search-input {
+    width: 100%;
+    height: 42px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+.header__search-input::placeholder {
+    color: #777;
+}
+
+.header__search-button {
+    height: 42px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.header__search-button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   ヘッダーナビ
+========================= */
+.header-nav {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.header-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header-nav-list a,
+.logout-btn,
+.menu-disabled {
+    color: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.header-nav-list a:hover,
+.logout-btn:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   ログアウト
+========================= */
+.logout-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/* =========================
+   出品ボタン
+========================= */
+.sell-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 84px;
+    height: 36px;
+    padding: 0 16px;
+    background: #fff;
+    color: #000 !important;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sell-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   未ログイン時の無効表示
+========================= */
+.menu-disabled {
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+}
+
+.sell-btn--disabled {
+    background: #ccc;
+    color: #666 !important;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+/* =========================
+   メイン
+========================= */
+main {
+    width: 100%;
+}
+

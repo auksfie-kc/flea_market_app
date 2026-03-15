@@ -1,0 +1,171 @@
+/* =========================
+   プロフィール編集全体
+========================= */
+.profile__form {
+    width: 100%;
+    max-width: 720px;
+    margin: 64px auto 88px;
+    padding: 0 24px;
+}
+
+.profile-form__heading {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.profile-form__heading h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: #111;
+}
+
+
+/* =========================
+   メッセージ
+========================= */
+.alert-error,
+.alert-success {
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.alert-error {
+    background: #fff1f1;
+    border: 1px solid #ffb3b3;
+    color: #d93025;
+}
+
+.alert-error ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+.alert-success {
+    background: #edf9ed;
+    border: 1px solid #b7e0b7;
+    color: #2e7d32;
+}
+
+
+/* =========================
+   フォーム本体
+========================= */
+.profile-form__body form {
+    width: 100%;
+}
+
+
+/* =========================
+   画像エリア
+========================= */
+.profile-form__group_image {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    column-gap: 32px;
+    row-gap: 28px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.profile-form__image-input {
+    display: none;
+}
+
+#preview {
+    display: block;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #d9d9d9;
+    justify-self: center;
+}
+
+.profile-form__group_image > #preview {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.profile-form__group_image > input[type="file"] {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.profile-form__group_image > label[for="img_url"] {
+    grid-column: 2;
+    grid-row: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 46px;
+    border: 2px solid #ff6b6b;
+    border-radius: 8px;
+    background: #fff;
+    color: #ff6b6b;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.profile-form__group_image > .profile-form__group {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   入力グループ
+========================= */
+.profile-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-form__group label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+}
+
+.profile-form__group input {
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border: 1px solid #8b8b8b;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 16px;
+    color: #222;
+    outline: none;
+}
+
+.profile-form__group input:focus {
+    border-color: #333;
+}
+
+
+/* =========================
+   送信ボタン
+========================= */
+.profile-form__submit {
+    width: 100%;
+    height: 58px;
+    margin-top: 32px;
+    border: none;
+    border-radius: 4px;
+    background: #ff5a5f;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-form__submit:hover {
+    opacity: 0.92;
+}
