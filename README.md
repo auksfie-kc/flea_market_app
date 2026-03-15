@@ -1,7 +1,7 @@
 # フリーマーケットアプリ　（Flea Market App）
 
 ユーザーが商品を出品・購入できる Web アプリケーションです。
-![トップ画面](./TOP-flea_maket_app.png)
+![トップ画面](./TOP-flea_market_app.png)
 
 ---
 
