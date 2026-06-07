@@ -25,12 +25,12 @@
                 <form action="{{ route('items.unlike', $item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="item-detail__icon-button">♡</button>
+                    <button type="submit" class="item-detail__icon-button">❤️</button>
                 </form>
                 @else
                 <form action="{{ route('items.like', $item->id) }}" method="POST">
                     @csrf
-                    <button type="submit" class="item-detail__icon-button">♡</button>
+                    <button type="submit" class="item-detail__icon-button">🤍</button>
                 </form>
                 @endif
                 @else
@@ -76,15 +76,23 @@
             </p>
         </div>
 
-        <h3 class="item-detail__comments-title">コメント（{{ $item->comments_count }}）</h3>
+        <h2 class="item-detail__comments-title">コメント（{{ $item->comments_count }}）</h2>
 
-        <div class="item-detail__comments">
-            @foreach ($comments as $comment)
-            <div class="item-detail__comment">
+        @foreach ($comments as $comment)
+        <div class="item-detail__comment">
+            <div class="item-detail__comment-header">
+                <div class="item-detail__comments_image">
+                    @if(!empty($comment->user->profile->img_url))
+                    <img src="{{ asset($comment->user->profile->img_url) }}" alt="{{ $comment->user->name }}">
+                    @else
+                    <div class="item-detail__comments_noimage">No Image</div>
+                    @endif
+                </div>
                 <p class="item-detail__comment-user">{{ $comment->user->name }}</p>
-                <p class="item-detail__comment-body">{{ $comment->comment }}</p>
             </div>
-            @endforeach
+                <p class="item-detail__comment-body">{{ $comment->comment }}</p>
+        </div>
+        @endforeach
 
             {{-- もっと見る（次ページがある時だけ表示） --}}
             @if ($comments->hasMorePages())
@@ -92,14 +100,14 @@
                 <a href="{{ $comments->nextPageUrl() }}">もっと見る</a>
             </div>
             @endif
-        </div>
+
         <div class="item-detail__comment-form">
-            <div class="item-detail__comment-form-title">商品へのコメント</div>
+            <h3 class="item-detail__comment-form-title">商品へのコメント</h3>
 
             @if ($errors->any())
-            <ul>
+            <ul class="item-detail__error-list">
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li class="item-detail__error-item">{{ $error }}</li>
                 @endforeach
             </ul>
             @endif

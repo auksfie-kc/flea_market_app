@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AddressRequest;
 use App\Models\Profile;
 use App\Models\Item;
-use App\Models\SoldItem;
-use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -16,7 +14,7 @@ class ProfileController extends Controller
         $user = auth()->user();
         $profile = $user->profile;
 
-        return view('user.address', compact('user','item', 'profile'));
+        return view('user.address', compact('user', 'item', 'profile'));
     }
 
     public function updateAddress(AddressRequest $request, Item $item)

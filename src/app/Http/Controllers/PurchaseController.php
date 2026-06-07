@@ -37,16 +37,15 @@ class PurchaseController extends Controller
             return back()->withErrors(['item_id' => 'この商品は売り切れです。']);
         }
 
-            $sold = SoldItem::create([
-                'item_id'   => $item->id,
-                'user_id'   => $user->id,
-                'sold_postcode' => $user->profile->postcode,
-                'sold_address'  => $user->profile->address,
-                'sold_building' => $user->profile->building ?? null,
-                'payment_method' => $request['payment_method'],
-                'status' => 'pending', // 購入後は一旦pendingにして、後で購入完了にする
-                'stripe_checkout_session_id' => null,
-            ]);
+        $sold = SoldItem::create([
+            'item_id'   => $item->id,
+            'user_id'   => $user->id,
+            'sold_postcode' => $user->profile->postcode,
+            'sold_address'  => $user->profile->address,                'sold_building' => $user->profile->building ?? null,
+            'payment_method' => $request['payment_method'],
+            'status' => 'pending', // 購入後は一旦pendingにして、後で購入完了にする
+            'stripe_checkout_session_id' => null,
+        ]);
 
 
         //コンビニ払いならここで終了

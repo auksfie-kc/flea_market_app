@@ -15,7 +15,7 @@
         @endif
     </div>
     <div class="profile__details">
-        <h2>{{ $user->name }}</h2>
+        <h1>{{ $user->name }}</h1>
     </div>
     <div class="profile__edit">
         <a href="{{ route('profile-edit') }}" class="profile__edit-link">プロフィールを編集</a>
@@ -40,24 +40,26 @@
         @if($tab === 'sell')
 
         @if($items->count())
-        <div class="profile__grid">
+        <ul class="profile__grid">
             @foreach($items as $item)
-            <a href="{{ route('item-detail', ['id' => $item->id]) }}" class="profile__card">
+            <li class="profile__item">
+                <a href="{{ route('item-detail', ['id' => $item->id]) }}" class="profile__card">
 
-                <div class="profile__card-image">
+                    <div class="profile__card-image">
                     @if(!empty($item->img_url ?? null))
-                    <img src="{{ asset($item->img_url) }}" alt="{{ $item->name ?? '商品画像' }}">
+                        <img src="{{ asset($item->img_url) }}" alt="{{ $item->name ?? '商品画像' }}">
                     @else
-                    <img src="{{ asset('images/default_item.png') }}" alt="商品画像">
+                        <img src="{{ asset('images/default_item.png') }}" alt="商品画像">
                     @endif
-                </div>
+                    </div>
 
-                <div class="profile__card-body">
-                    <div class="profile__card-name">{{ $item->name ?? '商品名' }}</div>
-                </div>
-            </a>
+                    <div class="profile__card-body">
+                        <h2 class="profile__card-name">{{ $item->name ?? '商品名' }}</h2>
+                    </div>
+                </a>
+            </li>
             @endforeach
-        </div>
+        </ul>
 
         {{ $items->appends(['tab' => 'sell'])->links() }}
         @else

@@ -257,31 +257,55 @@
 /* =========================
    コメント一覧
 ========================= */
-.item-detail__comments {
-    margin-bottom: 40px;
-}
-
 .item-detail__comment {
     margin-bottom: 24px;
 }
 
-.item-detail__comment-user {
+.item-detail__comment:first-child {
+    margin-top: 0;
+}
+
+/* ユーザー画像 + 名前 */
+.item-detail__comment-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 0 0 12px;
+    margin-bottom: 12px;
+}
+
+.item-detail__comments_image {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.item-detail__comments_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.item-detail__comments_noimage {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+}
+
+.item-detail__comment-user {
+    margin: 0;
     font-size: 24px;
     font-weight: 700;
     color: #111;
-}
-
-.item-detail__comment-user::before {
-    content: "";
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #d9d9d9;
-    flex-shrink: 0;
+    line-height: 1.4;
 }
 
 .item-detail__comment-body {
@@ -315,7 +339,7 @@
     margin-top: 16px;
 }
 
-.item-detail__error-list {
+.item-detail__comment-form ul {
     margin: 0 0 16px;
     padding-left: 20px;
     color: #ff5555;

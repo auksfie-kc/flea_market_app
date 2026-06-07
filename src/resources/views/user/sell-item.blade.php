@@ -7,14 +7,14 @@
 <div class="sell-item">
 
     @if ($errors->any())
-    <ul>
+    <ul class="sell-item-errors">
         @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
+        <li class="sell-item-errors__item">{{ $error }}</li>
         @endforeach
     </ul>
     @endif
 
-    <form action="{{ route('sell.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('sell.store') }}" method="POST" enctype="multipart/form-data" novalidate>
         @csrf
 
         <h1 class="sell-item__title">商品の出品</h1>
@@ -22,28 +22,6 @@
         <input type="file" name="img_url" id="img_url" class="sell-item__image-input">
         <img id="preview" src="" alt="画像プレビュー" width="200" height="130" style="display:none;">
         <label for="img_url" class="sell-item__image-label"></label>
-
-        <!-- JavaScript部分 -->
-        <script>
-            const imageInput = document.getElementById('img_url');
-            const preview = document.getElementById('preview');
-            const imageLabel = document.querySelector('.sell-item__image-label');
-
-            imageInput.addEventListener('change', function() {
-                const file = this.files[0];
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        preview.src = e.target.result;
-                        preview.style.display = 'block';
-                        imageLabel.style.display = 'none';
-                    }
-
-                    reader.readAsDataURL(file);
-                }
-            });
-        </script>
 
 
         <h2 class="sell-item__title">商品の詳細</h2>
@@ -85,5 +63,29 @@
 
     </form>
 </div>
+
+
+<!-- JavaScript部分 -->
+<script>
+    const imageInput = document.getElementById('img_url');
+    const preview = document.getElementById('preview');
+    const imageLabel = document.querySelector('.sell-item__image-label');
+
+    imageInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                imageLabel.style.display = 'none';
+            }
+
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
 
 @endsection

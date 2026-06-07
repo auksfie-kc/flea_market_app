@@ -7,8 +7,8 @@
 
 <div class="register-form__content">
 
-    @if (count($errors) > 0)
-    <ul>
+    @if ($errors->any())
+    <ul class="register-form__error-list">
         @foreach ($errors->all() as $error)
         <li>{{$error}}</li>
         @endforeach
@@ -16,34 +16,34 @@
     @endif
 
     <div class="register-form__heading">
-        <h2>会員登録</h2>
+        <h1>会員登録</h1>
     </div>
 
-    <form class="form" action="/register" method="post">
+    <form class="form" action="{{ route('register') }}" method="post" novalidate>
         @csrf
 
         <!--名前-->
         <div class="form__group">
-            <label class="form__label--item">ユーザー名</label>
-            <input type="text" name="name" value="{{ old('name') }}">
+            <label class="form__label--item" for="name">ユーザー名</label>
+            <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
 
         <!--メールアドレス-->
         <div class="form__group">
-            <label class="form__label--item">メールアドレス</label>
-            <input type="email" name="email" value="{{ old('email') }}">
+            <label class="form__label--item" for="email">メールアドレス</label>
+            <input type="email" name="email" id="email" value="{{ old('email') }}">
         </div>
 
         <!--パスワード-->
         <div class="form__group">
-            <label class="form__label--item">パスワード</label>
-            <input type="password" name="password">
+            <label class="form__label--item" for="password">パスワード</label>
+            <input type="password" name="password" id="password">
         </div>
 
         <!--確認用パスワード-->
         <div class="form__group">
-            <label class="form__label--item">確認用パスワード</label>
-            <input type="password" name="password_confirmation">
+            <label class="form__label--item" for="password_confirmation">確認用パスワード</label>
+            <input type="password" name="password_confirmation" id="password_confirmation">
         </div>
 
         <!--登録ボタン-->

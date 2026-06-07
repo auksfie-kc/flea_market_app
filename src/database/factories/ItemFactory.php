@@ -19,16 +19,16 @@ class ItemFactory extends Factory
     {
 
         $images = [
-            'item_images/item01.jpg',
-            'item_images/item02.jpg',
-            'item_images/item03.jpg',
-            'item_images/item04.jpg',
-            'item_images/item05.jpg',
-            'item_images/item06.jpg',
-            'item_images/item07.jpg',
-            'item_images/item08.jpg',
-            'item_images/item09.jpg',
-            'item_images/item10.jpg',
+            'item_images/bag.jpg',
+            'item_images/hdd.jpg',
+            'item_images/onion.jpg',
+            'item_images/shoes.jpg',
+            'item_images/laptop.jpg',
+            'item_images/mic.jpg',
+            'item_images/watch.jpg',
+            'item_images/tumbler.jpg',
+            'item_images/mill.jpg',
+            'item_images/makeup.jpg',
         ];
 
         return [
@@ -36,7 +36,7 @@ class ItemFactory extends Factory
             'user_id' => null,
             'condition_id' => $this->faker->numberBetween(1, 4), // 1から4までのランダムなcondition
             'name' => $this->faker->realText(20), //20文字の自然な日本語
-            'img_url' => 'storage/'.$this->faker->randomElement($images), // 画像パスをランダムに選択
+            'img_url' => $this->faker->randomElement($images), // 画像パスをランダムに選択
             'brand' => $this->faker->optional()->company(), //ブランド名（会社名）をランダムに生成、50%の確率でnull
             'description' => $this->faker->realText(100), //100文字の自然な日本語
             'price' => $this->faker->numberBetween(500, 50000), // 500円から50,000円のランダムな価格

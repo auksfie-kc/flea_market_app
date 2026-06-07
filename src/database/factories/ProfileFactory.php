@@ -19,7 +19,7 @@ class ProfileFactory extends Factory
             'postcode' => $this->faker->regexify('[0-9]{3}-[0-9]{4}'),
             'address'  => $this->faker->prefecture() . $this->faker->city(),
             'building' => 'マンション' . $this->faker->numberBetween(101, 999),
-            'img_url'  => null,
+            'img_url'  => 'storage/profile_images/sample-user.png',
         ];
     }
 }

@@ -24,31 +24,36 @@
         </a>
     </div>
 
-    <div class="item-list">
+    <h1 class="visually-hidden">商品一覧</h1>
+
+    <ul class="item-list">
         @forelse ($items as $item)
-        <a href="{{ route('item-detail', ['id' => $item->id]) }}">
-            <div class="item-card">
-                <div class="item-card__image">
-                    @if(!empty($item->img_url))
-                    <img src="{{ asset($item->img_url) }}" alt="{{ $item->name }}">
-                    @else
-                    <div class="item-card__noimage">No Image</div>
-                    @endif
+        <li class="item-list__item">
+            <a href="{{ route('item-detail', ['id' => $item->id]) }}">
+                <div class="item-card">
+                    <div class="item-card__image">
+                        @if(!empty($item->img_url))
+                        <img src="{{ asset($item->img_url) }}" alt="{{ $item->name }}">
+                        @else
+                        <div class="item-card__noimage">No Image</div>
+                        @endif
 
-                    @if($item->soldItem)
-                    <span class="item-card__sold-badge">Sold</span>
-                    @endif
-                </div>
+                        @if($item->soldItem)
+                        <span class="item-card__sold-badge">Sold</span>
+                        @endif
+                    </div>
 
-                <div class="item-card__body">
-                    <p class="item-card__name">{{ $item->name }}</p>
+                    <div class="item-card__body">
+                        <h2 class="item-card__name">{{ $item->name }}</h2>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </li>
         @empty
-        <p>商品がありません。</p>
+        {{-- 何も出さない --}}
         @endforelse
-    </div>
+
+    </ul>
 
     {{-- ページネーション --}}
     <div class="pagination">

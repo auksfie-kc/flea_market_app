@@ -8,34 +8,34 @@
 <div class="login-form__content">
 
     @if ($errors->any())
-    <ul>
+    <ul class="login-form__error-item">
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach
     </ul>
     @endif
     <div class="login-form__heading">
-        <h2>ログイン</h2>
+        <h1>ログイン</h1>
     </div>
 
 
-    <form class="form" action="/login" method="post">
+    <form class="form" action="{{ route('login') }}" method="post" novalidate>
         @csrf
 
 
         <!--メールアドレス-->
         <div class="form__group-title">
-            <span class="form__label--item">メールアドレス</span>
+            <label class="form__label--item" for="email">メールアドレス</label>
             <div class="form__input-text">
-                <input type="email" name="email" value="{{ old('email') }}">
+                <input type="email" name="email" id="email" value="{{ old('email') }}">
             </div>
         </div>
 
         <!--パスワード-->
         <div class="form__group-title">
-            <span class="form__label--item">パスワード</span>
+            <label class="form__label--item" for="password">パスワード</label>
             <div class="form__input-text">
-                <input type="password" name="password">
+                <input type="password" name="password" id="password">
             </div>
         </div>
 

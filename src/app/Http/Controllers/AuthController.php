@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\ProfileRequest;
 use App\Models\Profile;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class AuthController extends Controller
 {

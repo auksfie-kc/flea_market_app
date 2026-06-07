@@ -7,14 +7,14 @@
 
 <div class="address__form">
     <div class="address-form__heading">
-        <h2>住所の変更</h2>
+        <h1>住所の変更</h1>
     </div>
     <div class="address-form__body">
 
         @if ($errors->any())
         <div class="alert-error">
             入力にエラーがあります。再度ご確認ください。
-            <ul>
+            <ul class="alert-error__list">
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
                 @endforeach
@@ -25,17 +25,17 @@
         <form action="{{ route('profile.address.update',$item->id) }}" method="POST" novalidate>
             @csrf
             <div class="address-form__group">
-                <label for="postcode">郵便番号</label>
+                <label class="address-form__label" for="postcode">郵便番号</label>
                 <input type="text" id="postcode" name="postcode" value="{{ old('postcode', optional($profile)->postcode) }}" required>
             </div>
 
             <div class="address-form__group">
-                <label for="address">住所</label>
+                <label class="address-form__label" for="address">住所</label>
                 <input type="text" id="address" name="address" value="{{ old('address', optional($profile)->address) }}" required>
             </div>
 
             <div class="address-form__group">
-                <label for="building">建物名・部屋番号</label>
+                <label class="address-form__label" for="building">建物名・部屋番号</label>
                 <input type="text" id="building" name="building" value="{{ old('building', optional($profile)->building) }}">
             </div>
 
@@ -43,4 +43,4 @@
         </form>
     </div>
 </div>
-    @endsection
+@endsection

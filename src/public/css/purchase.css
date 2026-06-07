@@ -116,7 +116,7 @@
     border-bottom: 1px solid #777;
 }
 
-.purchase-item__payment h4 {
+.purchase-item__payment h2 {
     margin: 0 0 28px;
     font-size: 24px;
     font-weight: 700;
@@ -145,7 +145,7 @@
     border-bottom: 1px solid #777;
 }
 
-.purchase-item__address h4 {
+.purchase-item__address h2 {
     margin: 0 0 28px;
     font-size: 24px;
     font-weight: 700;
@@ -197,7 +197,7 @@
     background: #fff;
 }
 
-.purchase-item__total h4,
+.purchase-item__total h2,
 .purchase-item__total p {
     margin: 0;
     padding: 34px 24px;
@@ -212,7 +212,7 @@
     white-space: nowrap;
 }
 
-.purchase-item__total h4:nth-child(1),
+.purchase-item__total h2:nth-child(1),
 .purchase-item__price {
     border-bottom: 1px solid #777;
 }

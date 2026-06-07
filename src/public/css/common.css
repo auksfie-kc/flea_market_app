@@ -174,14 +174,12 @@ button {
 .menu-disabled {
     color: #999;
     cursor: default;
-    pointer-events: none;
 }
 
 .sell-btn--disabled {
     background: #ccc;
     color: #666 !important;
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 

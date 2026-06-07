@@ -18,7 +18,7 @@
     @if ($errors->any())
     <ul class="purchase-errors">
         @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
+        <li class="purchase-errors__item">{{ $error }}</li>
         @endforeach
     </ul>
     @endif
@@ -28,7 +28,7 @@
 
 
         <!-- 購入フォーム -->
-        <form action="{{ route('purchase.store', ['item' => $item->id]) }}" method="POST">
+        <form action="{{ route('purchase.store', ['item' => $item->id]) }}" method="POST" novalidate>
             @csrf
 
 
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="purchase-item__info">
-                    <h3 class="purchase-item__name">{{ $item->name }}</h3>
+                    <h1 class="purchase-item__name">{{ $item->name }}</h1>
                     <p class="purchase-item__item-price">¥{{ number_format($item->price) }}</p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <!-- 支払い方法 -->
             <div class="purchase-item__payment">
 
-                <h4>支払い方法</h4>
+                <h2>支払い方法</h2>
 
                 <select name="payment_method"
                     id="payment_method"
@@ -78,7 +78,7 @@
             <!-- 配送先 -->
             <div class="purchase-item__address">
 
-                <h4>配送先住所</h4>
+                <h2>配送先住所</h2>
 
                 <p class="purchase-item__postcode">
                     〒{{ $user->profile->postcode ?? '未設定' }}
@@ -111,12 +111,12 @@
             <!-- 価格まとめ -->
             <div class="purchase-item__total">
 
-                <h4>商品代金</h4>
+                <h2>商品代金</h2>
                 <p class="purchase-item__price">
                     ¥{{ number_format($item->price) }}
                 </p>
 
-                <h4>支払い方法</h4>
+                <h2>支払い方法</h2>
                 <p class="purchase-item__payment-method"></p>
 
             </div>

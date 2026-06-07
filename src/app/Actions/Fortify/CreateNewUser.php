@@ -40,7 +40,7 @@ class CreateNewUser implements CreatesNewUsers
                 'email.email' => 'メールアドレスはメール形式で入力してください',
                 'email.unique' => 'このメールアドレスはすでに使用されています',
                 'password.required' => 'パスワードを入力してください',
-                'password.min' => 'パスワードは８文字以上で入力してください',
+                'password.min' => 'パスワードは8文字以上で入力してください',
                 'password.confirmed' => 'パスワードと一致しません',
             ]
         )->validate();

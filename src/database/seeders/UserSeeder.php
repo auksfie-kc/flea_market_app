@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'postcode' => '123-4567',
             'address'  => '京都府',
             'building' => 'マンション111',
-            'img_url'  => null,
+            'img_url'  => 'storage/profile_images/sample-user.png',
         ]);
 
         // 購入テストユーザー１件を作成
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             'postcode' => '987-6543',
             'address'  => '大阪府',
             'building' => 'テストビル222',
-            'img_url'  => null,
+            'img_url'  => 'storage/profile_images/sample-user.png',
         ]);
 
         // 10人のダミーユーザーを作成

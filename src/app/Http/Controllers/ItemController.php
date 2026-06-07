@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Category;
 use App\Models\Condition;
-
-
-
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ItemController extends Controller
 {
@@ -21,17 +19,24 @@ class ItemController extends Controller
 
         // マイリスト（会員のみ）
         if ($tab === 'mylist') {
-            if (!Auth::check()) {
-                return redirect()->route('login');
-            }
-            $user = Auth::user();
-            $items = $user->likedItems()
-                ->when(!empty($keyword), function ($query) use ($keyword) {
+            if (Auth::check()) {
+                $user = Auth::user();
+                $items = $user->likedItems()
+                    ->when(!empty($keyword), function ($query) use ($keyword) {
                     $query->where('name', 'like', '%' . $keyword . '%');
-                })
-                ->latest()
-                ->paginate(12)
-                ->appends($request->query());
+                    })
+                    ->latest()
+                    ->paginate(12)
+                    ->appends($request->query());
+            } else {
+                $items = new LengthAwarePaginator(
+                    collect([]),
+                    0,
+                    12,
+                    1,
+                    ['path' => url()->current(), 'query' => $request->query()]
+                );
+            }
 
             return view('user.item-list', compact('items', 'tab'));
         }

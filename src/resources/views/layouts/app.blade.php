@@ -49,9 +49,10 @@
                     @endauth
 
                     @guest
-                    <li><span class="menu-disabled">マイページ</span></li>
-                    <li><span class="sell-btn sell-btn--disabled">出品</span></li>
+                    <li><a href="{{ route('login') }}">マイページ</a></li>
+                    <li><a href="{{ route('login') }}" class="sell-btn sell-btn--disabled">出品</a></li>
                     @endguest
+
                 </ul>
             </nav>
         </div>
