@@ -213,7 +213,7 @@ http://localhost/
 | user_id | bigint |  |  | ○ | users(id) |
 | sold_postcode | string |  |  | ○ |  |
 | sold_address | string |  |  | ○ |  |
-| sold_building | string |  |  | ○ |  |
+| sold_building | string |  |  |  |  |
 | payment_method | string |  |  | ○ |  |
 | status | enum |  |  | ○ |  |
 | stripe_checkout_session_id | string |  |  |  |  |
@@ -316,7 +316,10 @@ phpMyAdmin:http://localhost:8080/
 ### 1.テスト用データベースの作成
 
 MySQL コンテナに入り、テスト用データベースを作成します。
+#### mysqlコンテナに入る
 docker-compose exec mysql bash
+
+#### MySQLにログイン
 mysql -u root -p
 
 パスワードはrootと入力してください。
